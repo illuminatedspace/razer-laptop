@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create the firmware directory.
-if [! -d /lib/firmware/ath10k/QCA6174/ ]; then
+if [ ! -d /lib/firmware/ath10k/QCA6174/ ]; then
    mkdir -p /lib/firmware/ath10k/QCA6174/hw3.0/
 fi
 
@@ -16,7 +16,7 @@ else
    echo "Firmware file /lib/firmware/ath10k/QCA6174/hw3.0/board.bin already exists"
 fi
 
-if [ -f /lib/firmware/ath10k/QCA6174/hw3.0/firmware-4.bin ]; then
+if [ ! -f /lib/firmware/ath10k/QCA6174/hw3.0/firmware-4.bin ]; then
    if [ -f ./QCA6174/hw3.0/firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1 ]; then
       cp ./QCA6174/hw3.0/firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1 /lib/firmware/ath10k/QCA6174/hw3.0/firmware-4.bin
    else
